@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['images.unsplash.com', 'cdn.builder.io'],
+    domains: ['cdn.builder.io', 'images.unsplash.com'],
     remotePatterns: [
       {
         protocol: 'https',
@@ -9,8 +9,8 @@ const nextConfig = {
       },
     ],
   },
-  experimental: {
-    optimizePackageImports: ['lucide-react'],
+  env: {
+    NEXT_PUBLIC_BUILDER_API_KEY: process.env.NEXT_PUBLIC_BUILDER_API_KEY || 'YOUR_BUILDER_API_KEY',
   },
 };
 
